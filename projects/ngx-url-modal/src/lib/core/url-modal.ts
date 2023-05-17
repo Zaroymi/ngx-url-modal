@@ -137,7 +137,7 @@ export class UrlModal<
             ...fullConfig,
         });
 
-        this._closeSub = this.ref.onClose.subscribe((result: Data) => {
+        this._closeSub = this.ref.onClose.subscribe((result?: Data) => {
             const event = { type: 'close', data: result } as const;
             this.fireEvent(event);
             this.clear();

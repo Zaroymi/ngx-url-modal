@@ -1,9 +1,9 @@
 import { NgModule } from "@angular/core";
-import { MatDialog } from '@angular/material/dialog';
 import { DIALOG_PROVIDER_TOKEN } from "./dialog-provider-token";
+import { MatDialogProvider } from "../public-api";
 
 @NgModule({
-  providers: [{ provide: DIALOG_PROVIDER_TOKEN, useExisting: MatDialog }]
+    providers: [{ provide: DIALOG_PROVIDER_TOKEN, useClass: MatDialogProvider }]
 })
 export class NgxUrlModalModule {
 
