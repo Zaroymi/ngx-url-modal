@@ -1,0 +1,22 @@
+{
+  "name": "ngx-url-modal",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "> 8.0.0 <= 16.0.0",
+    "@angular/core": "> 8.0.0 <= 16.0.0",
+    "@angular/material": "> 8.0.0 <= 16.0.0",
+    "@angular/cdk": "> 8.0.0 <= 16.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@angular/material": {
+      "optional": true
+    },
+    "@angular/cdk": {
+        "optional": true
+    }
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}
