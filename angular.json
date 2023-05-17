@@ -99,6 +99,39 @@
           }
         }
       }
+    },
+    "ngx-url-modal": {
+      "projectType": "library",
+      "root": "projects/ngx-url-modal",
+      "sourceRoot": "projects/ngx-url-modal/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-url-modal/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-url-modal/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-url-modal/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/ngx-url-modal/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }
