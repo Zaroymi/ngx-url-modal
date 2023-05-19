@@ -8,14 +8,13 @@ import { UserModalConfig } from 'src/app/models/user-modal-config';
     templateUrl: './url.component.html',
     styleUrls: ['./url.component.scss']
 })
-export class UrlComponent implements BaseModal<UserModalConfig> {
+export class UrlComponent extends BaseModal<UserModalConfig> {
 
     constructor(
         @Inject(MAT_DIALOG_DATA)
-        public readonly config: any,
+        public readonly config: UserModalConfig,
     ) {
 
-        console.log(config);
-
+        super();
     }
 }
