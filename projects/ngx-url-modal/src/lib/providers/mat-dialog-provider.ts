@@ -12,8 +12,9 @@ export class MatDialogProvider implements DialogProvider {
     ) { }
 
     public open<
-        Config extends DialogConfig<unknown, object>,
-        Component extends BaseModal<Config>,
+        Data,
+        Config extends DialogConfig<Data>,
+        Component extends BaseModal<Data>,
         ReturnData
     >(component: Type<Component>, config: Config): DialogRef<ReturnData> {
         const ref = this.dialog.open(component, config);

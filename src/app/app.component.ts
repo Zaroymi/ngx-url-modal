@@ -1,10 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from './services/user.service';
+import { UrlContext, UrlModalService } from 'ngx-url-modal';
+import { ActivatedRoute } from '@angular/router';
+import { UrlComponent } from './components/url/url.component';
+
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    providers: [UrlModalService]
 })
-export class AppComponent {
-  title = 'ngx-url-modal-example';
+export class AppComponent implements OnInit {
+
+    constructor(
+        public readonly users: UserService,
+        private readonly route: ActivatedRoute,
+        public readonly modal: UrlModalService
+    ) {
+    }
+
+    ngOnInit(): void {
+        const urlContext = new UrlContext()
+            .declareParam('userId')
+            .declareComputedParam('user', params => {
+                return this.users.getUserById(params.userId);
+            });
+
+        this.modal.registerModal('user', UrlComponent)
+            .addUrlContext(urlContext)
+            .addStaticContext({
+                width: '400px',
+                height: '800px',
+                data: {
+                    s: 12
+                },
+                hasBackdrop: true,
+            });
+
+
+        this.modal.registerPage(this.route);
+    }
+
 }

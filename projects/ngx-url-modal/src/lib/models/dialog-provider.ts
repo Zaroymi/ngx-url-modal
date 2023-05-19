@@ -15,11 +15,12 @@ export interface DialogRef<ReturnData> {
 
 export interface DialogProvider {
     open<
-        Config extends DialogConfig,
-        Component extends BaseModal<Config>,
+        Data,
+        Config extends DialogConfig<Data>,
+        Component extends Type<BaseModal<Data>>,
         ReturnData,
     >(
-        component: Type<Component>,
+        component: Component,
         config: Config
     ): DialogRef<ReturnData>;
 }
