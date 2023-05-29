@@ -135,14 +135,14 @@ class MyPage implements OnInit {
 ```
 
 #### Methods
-- #### `registerPage(route: ActivatedRoute): UrlModalService`  
+- `registerPage(route: ActivatedRoute): UrlModalService`  
 Registers the page. This method must be called after modal registration. If called before modal registration, there is no guarantee that modals will open via URL after initialization.
-- #### `registerModal<ReturnData, ConfigType>(modalName: string, component: Type<BaseModal<ConfigType>>): UrlModal`  
+- `registerModal<ReturnData, ConfigType>(modalName: string, component: Type<BaseModal<ConfigType>>): UrlModal`  
 Registers a modal by name and component. It creates a new UrlModal and stores it in the service.
   - `modalName`: The name of the modal.
   - `component`: The component class representing the modal.
 
-- #### `open<T>(modalName: string, params: T): Promise<UrlModal<T> | undefined>`  
+- `open<T>(modalName: string, params: T): Promise<UrlModal<T> | undefined>`  
 Manually opens a modal with parameters.
 
   - `modalName`: The name of the modal.
@@ -150,14 +150,14 @@ Manually opens a modal with parameters.
 Throws an error if the page is not registered before calling any modal actions.  
 Returns a promise that resolves to the opened UrlModal instance or undefined if the modal is not found.
 
-- #### `close<Data>(modalName: string, data?: Data): Promise<UrlModal<Data>> | undefined`
+- `close<Data>(modalName: string, data?: Data): Promise<UrlModal<Data>> | undefined`
 Manually closes a modal with optional data.
   - `modalName`: The name of the modal.
   - `data (optional)`: The data to pass to the modal on closing.
 Throws an error if the page is not registered before calling any modal actions.  
 Returns a promise that resolves to the closed UrlModal instance or undefined if the modal is not found.
 
-- #### `on<Data>(modalName: string, event: UrlModalEventType): Observable<UrlModalEvent<Data>> | undefined`  
+- `on<Data>(modalName: string, event: UrlModalEventType): Observable<UrlModalEvent<Data>> | undefined`  
 Subscribes to a specific modal event.
 
   - `modalName`: The name of the modal.
@@ -171,13 +171,13 @@ Clears all resources used by the UrlModalService.
 Class for providing parametres declarations. Used for declaring and handling URL query param  
 The `declareParam` and `declareComputedParam` methods are used to declare parameters in the `UrlContext`. The `declareParam` method is used for declaring URL qury parameters, while the `declareComputedParam` method is used for declaring parametes that should be computed with some function from another params. By using these methods, you can define the parameters that will be used in the URL and specify their optional or required status.
 
-- #### `declareParam(param: string, optional?: boolean): UrlContext<ParamsDeclaration, ComputedParams>`  
+- `declareParam(param: string, optional?: boolean): UrlContext<ParamsDeclaration, ComputedParams>`  
   Declares a query parameter.
 
   - `param`: The name of the parameter.
   - `optional` (optional): Specifies whether the parameter is optional. Defaults to `true`
 
-- #### `declareComputedParam(param: string, selectFunction: (params: ComputedParams) => ParamType): UrlContext<ParamsDeclaration, ComputedParams>`
+- `declareComputedParam(param: string, selectFunction: (params: ComputedParams) => ParamType): UrlContext<ParamsDeclaration, ComputedParams>`
   Declares a computed parameter.
 
   - `param`: The name of the parameter.
