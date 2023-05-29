@@ -1,6 +1,6 @@
 {
   "name": "ngx-url-modal",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "peerDependencies": {
     "@angular/common": "> 8.0.0 <= 16.0.0",
     "@angular/core": "> 8.0.0 <= 16.0.0",
@@ -31,7 +31,6 @@
   },
   "sideEffects": false,
   "description": "Simple Angular library for keeping modal state in URL query params",
-  "main": "index.js",
   "author": "Roman Batin",
   "license": "MIT",
   "publishConfig": {
