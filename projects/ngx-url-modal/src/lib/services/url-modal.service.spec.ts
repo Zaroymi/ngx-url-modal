@@ -6,9 +6,9 @@ import { UrlContext } from '../core/url-context';
 import { BaseModal } from '../core/base-modal';
 import { NgxUrlModalModule } from '../ngx-url-modal.module';
 import { RouterTestingModule } from '@angular/router/testing';
-import { MatDialogModule } from '@angular/material/dialog';
+import { DialogModule } from '@angular/cdk/dialog';
 
-describe('ModalUrlService', () => {
+describe('UrlModalService', () => {
     let service: UrlModalService;
     let fixture: ComponentFixture<StubComponent>;
     let zone: NgZone;
@@ -28,7 +28,9 @@ describe('ModalUrlService', () => {
         template: '',
     })
     class StubModal extends BaseModal<{ id: string }> {
-
+        constructor() {
+            super();
+        }
     }
 
     function getUrlContext(paramName = 'id') {
@@ -37,8 +39,8 @@ describe('ModalUrlService', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            declarations: [StubComponent],
-            imports: [MatDialogModule, NgxUrlModalModule, RouterTestingModule],
+            declarations: [StubComponent, StubModal],
+            imports: [DialogModule, NgxUrlModalModule, RouterModule, RouterTestingModule],
             providers: [UrlModalService]
         });
 

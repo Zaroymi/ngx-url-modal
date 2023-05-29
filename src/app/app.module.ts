@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MatDialogModule } from '@angular/material/dialog';
 import { NgxUrlModalModule } from 'ngx-url-modal';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogModule } from '@angular/cdk/dialog';
 
 
 @NgModule({
@@ -16,7 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     imports: [
         BrowserModule,
         AppRoutingModule,
-        MatDialogModule,
+        DialogModule,
         NgxUrlModalModule,
         MatButtonModule,
         BrowserAnimationsModule,
