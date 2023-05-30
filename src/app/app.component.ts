@@ -32,11 +32,7 @@ export class AppComponent implements OnInit {
             .addStaticContext({
                 width: '400px',
                 height: '800px',
-                panelClass: params => {
-                    const css = Number(params.user.id) % 2 === 0 ? 'red-backgroud' : '';
-                    console.log(css);
-                    return css;
-                }
+                panelClass: params => Number(params.user.id) % 2 === 0 ? 'red-backgroud' : 'gray-background',
             });
 
 

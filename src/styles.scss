@@ -3,5 +3,10 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .red-backgroud {
-    background-color: red;
+    background-color: rgb(252, 171, 171);
+    border-radius: 50%;
+}
+
+.gray-background {
+    background-color: rgb(188, 188, 188);
 }

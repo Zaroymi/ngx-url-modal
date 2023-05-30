@@ -2,6 +2,10 @@
 
 NgxUrlModal is an Angular library that enables you to save and restore the state of modal windows in the URL query parameters. It provides a seamless way to store data in the query parameters, allowing the modal state to be preserved even after page reloads. With NgxUrlModal, you can easily create and manage modals with dynamic parameters, providing a consistent user experience and easy sharing of modal states via URLs
 
+## Live demo
+
+Live demo on [Stackblitz](https://stackblitz.com/edit/stackblitz-starters-vhazka?file=src%2Fmain.ts)
+
 ## Installation
 
 ```bash
@@ -14,6 +18,7 @@ Library uses [**Dialog**](https://material.angular.io/cdk/dialog/overview) by de
 ```bash 
 npm install @angular/cdk
 ```
+
 
 After packages installation you should import `NgxUrlModalModule` module to your app
 
@@ -31,8 +36,8 @@ After packages installation you should import `NgxUrlModalModule` module to your
 export class AppModule { }
 
 ```
-
-
+**Note** If you use `MatDialog` you can import only `MatDialogModule` and that will work.
+ 
 ## Usage
 
 ### Configure modal component
